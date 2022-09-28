@@ -6,6 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
@@ -19,12 +20,23 @@
       </header>
         <section>
 
-          <%= yield %>
+            <% if notice.present? %>
+              <script>
+                alert("<%= notice %>");
+              </script>
+            <% end %>
 
+          <article class="lg:min-h-screen lh:flex lg:items-center p-6 lg:p-24 xl:-p40">
+
+            <div class="flex-grow shadow-2xl rounded-md border border-[#333549] p-2">
+            <%= yield %>
+            </div>
+          </article>
         </section>
       <footer>
         <%= render "/layouts/footer" %>
       </footer>
     </main>
   </body>
+  <script src="../path/to/flowbite/dist/flowbite.js"></script>
 </html>

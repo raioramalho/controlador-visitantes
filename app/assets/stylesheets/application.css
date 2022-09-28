@@ -27,7 +27,47 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
+    border: solid 2px #93989a;
 }
+
+#nav-img:hover {
+    transition: 1s;
+    border-radius: 20%;
+    border: solid 2px white;
+}
+
+
+hr {
+    border: solid 1px;
+}
+
+#visitante {
+    border: solid 1px red;
+    padding: 10px;
+    margin: 10px;
+}
+
+#photo {
+    border-radius: 50%;
+    border: solid 2px #93989a;
+}
+
+#photo:hover {
+    transition: 1s;
+    border-radius: 20%;
+    border: solid 2px white;
+}
+
+#infos > p {
+    color: white;
+    font-weight: bold;
+}
+
+.show-btn:hover {
+    transition: 1s;
+    color: steelblue;
+}
+
 
 footer {
     bottom: 0;
