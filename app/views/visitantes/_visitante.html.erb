@@ -1,0 +1,42 @@
+<div id="<%= dom_id visitante %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Foto:</strong>
+    <%= visitante.foto %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Nome:</strong>
+    <%= visitante.nome %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Descricao:</strong>
+    <%= visitante.descricao %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Documento:</strong>
+    <%= visitante.documento %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Destino:</strong>
+    <%= visitante.destino %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Acompanhante:</strong>
+    <%= visitante.acompanhante %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Estadia:</strong>
+    <%= visitante.estadia %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this visitante", visitante, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this visitante', edit_visitante_path(visitante), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
