@@ -1,4 +1,35 @@
-<div id="<%= dom_id visitante %>">
+<div id="visitor" class="border border-slate-700 rounded-md shadow-xl h-40 bg-slate-800 max-w-lg m-5 flex justify-between">
+  <img src="https://thispersondoesnotexist.com/image" alt="foto" id="photo" class="h-32 w-32 m-4">
+  <div id="infos" class="rounded m-5 text-sm">
+    <p>NOME: <%= visitante.nome %></p>
+    <p>DOCUMENTO: <%= visitante.documento %></p>
+    <p>DESTINO: <%= visitante.destino %></p>
+    <p>ACOMPANHANTE: <%= visitante.acompanhante %></p>
+    <p>ENTROU: <%= visitante.estadia %></p>
+    <p>SAIDA:</p>
+  </div>
+
+  <div id="card-buttons" class="border-2 border-slate-700 rounded shadow-xl flex-col justify-between justify-center place-content-end">
+
+    <div class="flex flex-col justify-between text-white">
+
+      <div class="show-btn">
+        <a href="<%= visitante_path(visitante) %>">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+          </svg>
+
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!--
+
+<div id="visitante" class="shadow-2xl">
   <p class="my-5">
     <strong class="block font-medium mb-1">Foto:</strong>
     <%= visitante.foto %>
@@ -37,6 +68,6 @@
   <% if action_name != "show" %>
     <%= link_to "Show this visitante", visitante, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to 'Edit this visitante', edit_visitante_path(visitante), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
   <% end %>
-</div>
+</div>-->
+
