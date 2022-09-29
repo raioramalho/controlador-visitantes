@@ -104,6 +104,17 @@ hr {
     margin: 5px;
 }
 
+.pagination {
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+span.current {
+    color: steelblue;
+    font-weight: bold;
+    font-size: 20px;
+}
+
 
 @media only screen and (max-device-width: 1300px) {
     #container {

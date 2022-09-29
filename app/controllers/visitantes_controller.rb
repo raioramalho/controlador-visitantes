@@ -3,7 +3,8 @@ class VisitantesController < ApplicationController
 
   # GET /visitantes or /visitantes.json
   def index
-    @visitantes = Visitante.all
+    #@visitantes = Visitante.all
+    @visitantes = Visitante.order(:id).page params[:page]
   end
 
   # GET /visitantes/1 or /visitantes/1.json

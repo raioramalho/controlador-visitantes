@@ -30,7 +30,10 @@
 
             <div id="container" class="flex-grow shadow-2xl rounded-md border border-[#333549] p-2">
             <%= yield %>
+
             </div>
+
+            <%= paginate @visitantes %>
           </article>
         </section>
       <footer>
