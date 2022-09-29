@@ -32,8 +32,10 @@
             <%= yield %>
 
             </div>
-
+            <% if current_page?(root_path)%>
             <%= paginate @visitantes %>
+            <% else %>
+            <% end %>
           </article>
         </section>
       <footer>
