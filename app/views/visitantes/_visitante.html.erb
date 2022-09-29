@@ -13,7 +13,7 @@
 
     <div class="flex flex-col justify-between text-white">
 
-      <% if current_page?(@visitante)%>
+      <% if current_page?(visitante_path(visitante))%>
         <style>
           #card-buttons {
             display: none;
