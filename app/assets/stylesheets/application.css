@@ -17,18 +17,34 @@
 
  * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
  }
 
  body {
     background-color: #282b3a;
  }
 
+#nav-full {
+    align-items: center;
+    justify-content: center;
+}
+
+#nav-upbar {
+    padding: 50px;
+}
+
+#nav-title:hover {
+    color: whitesmoke;
+}
+
 #nav-img {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     border: solid 2px #93989a;
 }
+
 
 #nav-img:hover {
     transition: 1s;
@@ -41,10 +57,16 @@ hr {
     border: solid 1px;
 }
 
-#visitante {
+#container {
     border: solid 1px red;
-    padding: 10px;
-    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+#visitor {
+    border: solid 1px blue;
+    flex-basis: 50%;
 }
 
 #photo {
@@ -66,6 +88,42 @@ hr {
 .show-btn:hover {
     transition: 1s;
     color: steelblue;
+}
+
+@media only screen and (max-device-width: 1300px) {
+    #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    #footer-text {
+        font-size: small;
+    }
+
+}
+
+@media only screen and (max-device-width: 700px) {
+    #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    #visitor {
+        width: 270px;
+        height: 330px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #footer-text {
+        font-size: small;
+    }
+
 }
 
 
