@@ -58,14 +58,14 @@ hr {
 }
 
 #container {
-    border: solid 1px red;
+
     display: flex;
     flex-wrap: wrap;
 }
 
 
 #visitor {
-    border: solid 1px blue;
+
     flex-basis: 50%;
 }
 
