@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video</title>
+</head>
+<body style="background-color:slategray;">
+    <style>
+        body {
+            box-sizing: border-box;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        video,canvas, .new-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 30%;
+        }
+        button {
+            background-color: slategray;
+            border: none;
+            cursor: pointer;
+        }
+        canvas {
+            display: none;
+        }
+
+
+
+    </style>
+    <button id="shot">
+    <video id="camera" autoplay></video>
+    </button>
+    <canvas id="quadro"></canvas>
+
+
+    <script>
+        var video = document.getElementById('camera');
+        navigator.mediaDevices.getUserMedia({video:true})
+        .then(stream => {
+            video.srcObject = stream;
+            video.play();
+        })
+        .catch(error => {
+            console.log(error);
+        })
+
+        document.getElementById('shot').addEventListener('click', () => {
+            var canvas = document.getElementById('quadro');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            var context = canvas.getContext('2d');
+            context.drawImage(video, 0, 0);
+
+            canvas.toBlob((blob) => {
+            const newImg = document.createElement('img');
+            const url = URL.createObjectURL(blob);
+
+            newImg.onload = () => {
+                // no longer need to read the blob so it's revoked
+                URL.revokeObjectURL(url);
+            };
+
+            newImg.src = url;
+            newImg.className = "new-img";
+            document.body.appendChild(newImg);
+            });
+        });
+    </script>
+</body>
+</html>
