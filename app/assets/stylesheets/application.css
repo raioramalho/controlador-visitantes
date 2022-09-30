@@ -46,17 +46,25 @@
 #nav-img {
     width: 80px;
     height: 80px;
-    border-radius: 50%;
+    border-radius: 20%;
     border: solid 2px #93989a;
 }
 
 
 #nav-img:hover {
     transition: 1s;
-    border-radius: 20%;
     border: solid 2px white;
 }
 
+#nav-menu a {
+    border: solid 1px slategray;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+#nav-menu a:hover {
+    border: solid 1px whitesmoke;
+}
 
 hr {
     border: solid 1px;
