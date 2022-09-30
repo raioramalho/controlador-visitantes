@@ -35,8 +35,9 @@
               </script>
             <% end %>
 
-          <article class="lg:min-h-screen lh:flex lg:items-center p-6 lg:p-24 xl:-p40">
 
+          <article class="lg:min-h-screen lh:flex lg:items-center p-6 lg:p-24 xl:-p40">
+          <center><p class="text-white"> Listing: <%= @visitantes.all.count%> Item(s) </p></center>
             <div id="container" class="flex-grow shadow-2xl rounded-md border border-[#333549] p-2">
             <%= yield %>
 
