@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     get '/page/:page', action: :index, on: :collection
   end
 
+
   root "visitantes#index"
 end
