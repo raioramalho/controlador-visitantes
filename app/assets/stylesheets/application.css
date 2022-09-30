@@ -126,7 +126,7 @@ span.current {
     }
 
     section {
-        margin-top: 0px;
+        margin-top: -10px;
      }
 
     #container {
@@ -151,7 +151,7 @@ span.current {
 @media only screen and (max-device-width: 700px) {
 
     section {
-        margin-top: 0px;
+        margin-top: -10px;
      }
 
     body {
