@@ -37,7 +37,17 @@
 
 
           <article class="lg:min-h-screen lh:flex lg:items-center p-6 lg:p-24 xl:-p40">
-          <center><p class="text-white"> Listing: <%= @visitantes.all.count%> Item(s) </p></center>
+
+            <% if current_page?(root_path)%>
+              <center><p class="text-white"> Listing: <%= @visitantes.all.count%> Item(s) </p></center>
+            <% elsif current_page?("/visitantes/")%>
+              <center><p class="text-white"> Listing: <%= @visitantes.all.count%> Item(s) </p></center>
+            <% elsif current_page?("/visitantes/page/#{params[:page]}")%>
+              <center><p class="text-white"> Listing: <%= @visitantes.all.count%> Item(s) </p></center>
+            <% else %>
+
+            <% end %>
+
             <div id="container" class="flex-grow shadow-2xl rounded-md border border-[#333549] p-2">
             <%= yield %>
 
