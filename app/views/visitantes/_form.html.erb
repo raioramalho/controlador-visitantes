@@ -33,8 +33,15 @@
                </th>
                <td class="py-4 px-6">
                   <div class="my-5">
-                     <%= form.label :foto %>
-                     <%= form.text_field :foto, rows: 4, class: "block text-black shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+                     <% if current_page?(new_visitante_path) %>
+                        <%= form.label :foto %>
+                        <%= form.text_field :foto, rows: 4, class: "block text-black shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+                     <% else %>
+                        <div class="flex">
+                           <img  style="wdith: 120px; height: 120px;" src="<%= visitante.foto %>">
+                           <%= form.text_field :foto, rows: 4, class: "block text-black shadow rounded-md border border-gray-200 outline-none  w-full" %>
+                        </div>
+                     <% end %>
                   </div>
                </td>
             </tr>
@@ -73,8 +80,8 @@
       <%= form.label :estadia %>
       <%= form.datetime_field :estadia, class: "block text-black shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
    </div>
-</div>
+
 <div class="inline">
-   <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block text-black font-medium cursor-pointer" %>
+   <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
 </div>
 <% end %>
