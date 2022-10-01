@@ -133,6 +133,13 @@ span.current {
     font-size: 20px;
 }
 
+#buttons-box {
+    box-sizing: border-box;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
 @media screen and (max-device-width: 1200px) {
     #container {
         min-width: 100%;
