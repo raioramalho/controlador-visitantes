@@ -68,11 +68,14 @@ hr {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
 }
 
 
 #visitor {
+    box-sizing: border-box;
     flex-basis: 50%;
+    height: auto;
 }
 
 #photo {
