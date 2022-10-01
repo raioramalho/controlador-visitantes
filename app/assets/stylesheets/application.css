@@ -82,7 +82,6 @@ hr {
 #visitor:hover {
     transition: 1s;
     border-color: whitesmoke;
-    cursor: pointer;
 }
 
 #photo {
@@ -94,6 +93,7 @@ hr {
     transition: 1s;
     border-radius: 20%;
     border: solid 2px white;
+    cursor: pointer;
 }
 
 #infos {
