@@ -1,53 +1,80 @@
-<%= form_with(model: visitante, class: "form-cadastro contents") do |form| %>
-  <% if visitante.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+<div id="box-cadastro">
+
+   <%= form_with(model: visitante, class: "form-cadastro contents") do |form| %>
+   <% if visitante.errors.any? %>
+   <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(visitante.errors.count, "error") %> prohibited this visitante from being saved:</h2>
-
       <ul>
-        <% visitante.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
+         <% visitante.errors.each do |error| %>
+         <li><%= error.full_message %></li>
+         <% end %>
       </ul>
-    </div>
-  <% end %>
-
-  <div class="my-5">
-    <%= form.label :foto %>
-
-    <%= form.text_field :foto, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :nome %>
-    <%= form.text_field :nome, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :descricao %>
-    <%= form.text_field :descricao, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :documento %>
-    <%= form.text_field :documento, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :destino %>
-    <%= form.text_field :destino, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :acompanhante %>
-    <%= form.text_field :acompanhante, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :estadia %>
-    <%= form.datetime_field :estadia, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
-  </div>
+   </div>
+   <% end %>
+   <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
+      <table class="w-full text-sm text-left text-black dark:text-gray-400">
+         <thead class="text-xs text-black uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+               <th scope="col" class="py-3 px-6">
+                  DESCRIÇÃO DO VISITANTE
+               </th>
+               <th scope="col" class="py-3 px-6">
+                  OPÇÕES
+               </th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr class="bg-white dark:bg-gray-800">
+               <th scope="row" class="py-4 px-6 font-medium text-black whitespace-nowrap">
+                  <div class="my-5">
+                     <%= form.label :nome %>
+                     <%= form.text_field :nome, class: "block text-black shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+                  </div>
+               </th>
+               <td class="py-4 px-6">
+                  <div class="my-5">
+                     <%= form.label :foto %>
+                     <%= form.text_field :foto, rows: 4, class: "block text-black shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+                  </div>
+               </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800">
+               <th scope="row" class="py-4 px-6 font-medium text-black whitespace-nowrap">
+                  <div class="my-5">
+                     <%= form.label :documento %>
+                     <%= form.text_field :documento, class: "block text-black shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+                  </div>
+               </th>
+               <td class="py-4 px-6">
+                  <div class="my-5">
+                     <%= form.label :descricao %>
+                     <%= form.text_field :descricao, class: "block text-black shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+                  </div>
+               </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800">
+               <th scope="row" class="py-4 px-6 font-medium text-black whitespace-nowrap">
+                  <div class="my-5">
+                     <%= form.label :destino %>
+                     <%= form.text_field :destino, class: "block text-black shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+                  </div>
+               </th>
+               <td class="py-4 px-6">
+                  <div class="my-5">
+                     <%= form.label :acompanhante %>
+                     <%= form.text_field :acompanhante, class: "block text-black shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+                  </div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <div class="my-5">
+      <%= form.label :estadia %>
+      <%= form.datetime_field :estadia, class: "block text-black shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+   </div>
+</div>
+<div class="inline">
+   <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block text-black font-medium cursor-pointer" %>
+</div>
 <% end %>
