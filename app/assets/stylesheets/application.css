@@ -113,10 +113,6 @@ hr {
     align-items: center;
 }
 
-#card-buttons {
-    border: solid 1px slategray;
-}
-
 .control-btn {
     margin: 5px;
 }
@@ -184,8 +180,8 @@ span.current {
 
 
     #visitor {
-        width: 270px;
-        height: 330px;
+        width: auto;
+        height: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
